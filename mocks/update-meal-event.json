@@ -1,0 +1,11 @@
+{
+    "body": "{\"amount\":\"80\"}",
+    "pathParameters": {
+      "id": "4efe3820-3313-11ea-8122-c54b42f480f2"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "dd15a689-7ef9-4336-8cc4-6c4ddd9c51f1"
+      }
+    }
+  }

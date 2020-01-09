@@ -4,6 +4,7 @@ service: stayStrong-app-api
 # Create an optimized package for our functions 
 package:
   individually: true
+  exludeDevDependencies: false
 
 plugins:
   - serverless-bundle # Package our functions with Webpack
@@ -13,8 +14,8 @@ plugins:
 provider:
   name: aws
   runtime: nodejs10.x
-  stage: dev
-  region: us-east-1
+  stage: prod
+  region: eu-central-1
   # To load environment variables externally
   # rename env.example to .env and uncomment
   # the following line. Also, make sure to not
@@ -22,11 +23,108 @@ provider:
   #
   #environment:
   #  sampleEnvVar: ${env:SAMPLE_ENV_VAR}
+  environment:
+    tableNameProducts: products
+    tableNameMeals: meals
 
+    # 'iamRoleStatements' defines the permission policy for the Lambda function.
+# In this case Lambda functions are granted with permissions to access DynamoDB.
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:eu-central-1:*:*"
+    
+# Defines an HTTP API endpoint that calls the main function in create.js
+# - path: url path is /notes
+# - method: POST request
+# - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross
+#     domain api call
+# - authorizer: authenticate using the AWS IAM role
 functions:
-  hello:
-    handler: handler.hello
+  create-product:
+    handler: create-product.main
     events:
       - http:
-          path: hello
+          path: products
+          method: post
+          cors: true
+          authorizer: aws_iam
+  get-product:
+    handler: get-product.main
+    events:
+      - http:
+          path: products/{id}
           method: get
+          cors: true
+          authorizer: aws_iam
+  list-product:
+    handler: list-product.main
+    events:
+      - http:
+          path: products
+          method: get
+          cors: true
+          authorizer: aws_iam
+  update-product:
+    handler: update-product.main
+    events:
+      - http:
+          path: products/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+  delete-product:
+    handler: delete-product.main
+    events:
+      - http:
+          path: products/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
+  create-meal:
+    handler: create-meal.main
+    events:
+      - http:
+          path: products/{id}
+          method: post
+          cors: true
+          authorizer: aws_iam
+  get-meal:
+    handler: get-meal.main
+    events:
+      - http:
+          path: meals/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  list-meal:
+    handler: list-meal.main
+    events:
+      - http:
+          path: meals
+          method: get
+          cors: true
+          authorizer: aws_iam
+  update-meal:
+    handler: update-meal.main
+    events:
+      - http:
+          path: meals/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+  delete-meal:
+    handler: delete-meal.main
+    events:
+      - http:
+          path: meals/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam

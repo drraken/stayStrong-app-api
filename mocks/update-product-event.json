@@ -1,0 +1,11 @@
+{
+    "body": "{\"company\":\"Ecuador\",\"kcal\":\"97\",\"proteins\":\"1\",\"fats\":\"0.3\",\"carbs\":\"21,8\"}",
+    "pathParameters": {
+      "id": "b05e0530-330b-11ea-953f-a31b5b5f3124"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "dd15a689-7ef9-4336-8cc4-6c4ddd9c51f1"
+      }
+    }
+  }
