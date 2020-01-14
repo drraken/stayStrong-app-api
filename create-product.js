@@ -17,7 +17,10 @@ export async function main(event, context) {
       kcal: data.kcal,
       proteins: data.proteins,
       fats: data.fats,
+      saturated: data.saturated,
       carbs: data.carbs,
+      sugars: data.sugars,
+      salt: data.salt,
       createdAt: Date.now()
     }
   };

@@ -1,5 +1,5 @@
 {
-    "body": "{\"type\":\"Launch\",\"amount\":\"120\"}",
+    "body": "{\"type\":\"Launch\",\"amount\":\"120\",\"name\":\"Banan\",\"kcal\":\"120\",\"proteins\":\"50\",\"fats\":\"120\",\"carbs\":\"120\"}",
     "pathParameters": {
       "id": "b05e0530-330b-11ea-953f-a31b5b5f3124"
     },

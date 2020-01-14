@@ -1,5 +1,5 @@
 {
-    "body": "{\"name\":\"Banan\",\"company\":\"Chile\",\"kcal\":\"97\",\"proteins\":\"1\",\"fats\":\"0.3\",\"carbs\":\"21,8\"}",
+    "body": "{\"name\":\"Banan\",\"company\":\"Chile\",\"kcal\":\"97\",\"proteins\":\"1\",\"fats\":\"0.3\",\"saturated\":\"0.2\",\"carbs\":\"21,8\",\"sugars\":\"10\",\"salt\":\"2.3\"}",
     "requestContext": {
       "identity": {
         "cognitoIdentityId": "dd15a689-7ef9-4336-8cc4-6c4ddd9c51f1"

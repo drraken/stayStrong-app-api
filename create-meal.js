@@ -15,6 +15,11 @@ export async function main(event, context) {
       type: data.type,
       productId: event.pathParameters.id,
       amount: data.amount,
+      name: data.name,
+      kcal: data.kcal,
+      proteins: data.proteins,
+      fats: data.fats,
+      carbs: data.carbs,
       createdAt: Date.now()
     }
   };

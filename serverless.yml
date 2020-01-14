@@ -92,7 +92,7 @@ functions:
     handler: create-meal.main
     events:
       - http:
-          path: products/{id}
+          path: meals/{id}
           method: post
           cors: true
           authorizer: aws_iam
