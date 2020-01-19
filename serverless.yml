@@ -26,6 +26,7 @@ provider:
   environment:
     tableNameProducts: products
     tableNameMeals: meals
+    tableNameParameters: usersParameters
 
     # 'iamRoleStatements' defines the permission policy for the Lambda function.
 # In this case Lambda functions are granted with permissions to access DynamoDB.
@@ -126,5 +127,29 @@ functions:
       - http:
           path: meals/{id}
           method: delete
+          cors: true
+          authorizer: aws_iam
+  create-parameter:
+    handler: create-parameter.main
+    events:
+      - http:
+          path: usersParameters
+          method: post
+          cors: true
+          authorizer: aws_iam
+  list-parameter:
+    handler: list-parameter.main
+    events:
+      - http:
+          path: usersParameters
+          method: get
+          cors: true
+          authorizer: aws_iam
+  update-parameter:
+    handler: update-parameter.main
+    events:
+      - http:
+          path: parameter/{id}
+          method: put
           cors: true
           authorizer: aws_iam

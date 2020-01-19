@@ -8,20 +8,14 @@ export async function main(event, context) {
   const data = JSON.parse(event.body);
 
   const params = {
-    TableName: process.env.tableNameMeals,
+    TableName: process.env.tableNameParameters,
     Item: {
-      mealId: uuid.v1(),
+      parameterId: uuid.v1(),
       userId: event.requestContext.identity.cognitoIdentityId,
-      type: data.type,
-      productId: event.pathParameters.id,
-      amount: data.amount,
-      name: data.name,
-      kcal: data.kcal,
-      proteins: data.proteins,
-      fats: data.fats,
-      carbs: data.carbs,
-      day: data.day,
-      createdAt: Date.now()
+      kcalGoal: data.kcalGoal,
+      proteinGoal: data.proteinGoal,
+      fatGoal: data.fatGoal,
+      carbGoal: data.carbGoal
     }
   };
 
