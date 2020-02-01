@@ -1,5 +1,5 @@
 {
-    "body": "{\"kcalGoal\":\"120\",\"proteinGoal\":\"50\",\"fatGoal\":\"120\",\"carbGoal\":\"120\"}",
+    "body": "{\"gender\":\"male\",\"weight\":\"120\",\"height\":\"190\",\"age\":\"20\",\"activity\":\"1.5\",\"goal\":\"200\",\"kcalGoal\":\"120\",\"proteinGoal\":\"50\",\"fatGoal\":\"120\",\"carbGoal\":\"120\",\"setOwnGoal\":\"false\"}",
     "requestContext": {
       "identity": {
         "cognitoIdentityId": "dd15a689-7ef9-4336-8cc4-6c4ddd9c51f1"

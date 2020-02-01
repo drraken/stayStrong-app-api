@@ -14,12 +14,19 @@ export async function main(event, context) {
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
-    UpdateExpression: "SET kcalGoal = :kcalGoal, proteinGoal = :proteinGoal, fatGoal = :fatGoal, carbGoal = :carbGoal",
+    UpdateExpression: "SET gender = :gender, weight = :weight, height = :height, age = :age, activity = :activity, goal = :goal, kcalGoal = :kcalGoal, proteinGoal = :proteinGoal, fatGoal = :fatGoal, carbGoal = :carbGoal, setOwnGoal = :setOwnGoal",
     ExpressionAttributeValues: {
+      ":gender": data.gender || null,
+      ":weight": data.weight || null,
+      ":height": data.height || null,
+      ":age": data.age || null,
+      ":activity": data.activity || null,
+      ":goal": data.goal || null,
       ":kcalGoal": data.kcalGoal || null,
       ":proteinGoal": data.proteinGoal || null,
       ":fatGoal": data.fatGoal || null,
-      ":carbGoal": data.carbGoal || null
+      ":carbGoal": data.carbGoal || null,
+      ":setOwnGoal": data.setOwnGoal || null
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you

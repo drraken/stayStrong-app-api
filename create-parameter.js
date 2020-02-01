@@ -12,10 +12,17 @@ export async function main(event, context) {
     Item: {
       parameterId: uuid.v1(),
       userId: event.requestContext.identity.cognitoIdentityId,
+      gender: data.gender,
+      weight: data.weight,
+      height: data.height,
+      age: data.age,
+      activity: data.activity,
+      goal: data.goal,
       kcalGoal: data.kcalGoal,
       proteinGoal: data.proteinGoal,
       fatGoal: data.fatGoal,
-      carbGoal: data.carbGoal
+      carbGoal: data.carbGoal,
+      setOwnGoal: data.setOwnGoal
     }
   };
 

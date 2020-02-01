@@ -149,7 +149,7 @@ functions:
     handler: update-parameter.main
     events:
       - http:
-          path: parameter/{id}
+          path: usersParameters/{id}
           method: put
           cors: true
           authorizer: aws_iam
